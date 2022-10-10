@@ -1,0 +1,23 @@
+# Test cases
+
+Given a fully functioning system, I would likely undergo the following tests to ensure that everything is working as intended
+
+## Automated Test Cases
+Using pytest and a github workflow, verify
+-  enabling a valve shows its state as true, and disabling a valve shows its state as false
+-  functions to calculate pressure/flow rate/etc. return a float
+-  Verify impossibilities throw errors or some sort of notificaiton (i.e. Volume < 0)
+-  log files print to the console with 2 units of precision (time included)
+-  Verify commands received from the simulator (i.e. events desired by the user) are interpreted correctly, and result in the desired outcome 
+    (i.e. a command to open a valve asserts a state of "open")
+-  Verify that simulation rejects unapproved inputs (i.e. sending command "hello there" to a valve should result in an error)
+-  Verify logging is correct
+
+
+
+## Manual Test Cases
+-  Perform hand calculations to verify that calculated variables are correct
+-  Verify that flow rate going from high pressure to low pressure does not result in an impossible occurence (i.e. pressure should not increase)
+-  Verify that opening a valve changes the state of connected Volumes, and does not affect "non-connected" volumes
+-  Verify that commanding one valve does not open the inorrect valve (same with closing)
+-  Perform testing on a software/hardware test bench
