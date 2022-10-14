@@ -2,6 +2,7 @@
 
 # Imports
 from dataclasses import dataclass
+from multiprocessing.sharedctypes import Value
 
 
 # Parent Hydraulic System
@@ -9,7 +10,7 @@ from dataclasses import dataclass
 class Hydraulic:
     location: str
     bulk_modulus: float
-    
+
     
 # Valve System
 @dataclass
@@ -19,13 +20,17 @@ class Orifice(Hydraulic):
     flow_rate: float = 0.0
     
     def get_mass_flow_rate(self, Pin:float, Pout:float):
-        pass
+        mass_flow_rate = self.conductance * (Pout - Pin)
+        self.flow_rate = mass_flow_rate
+        return mass_flow_rate
 
     def open_valve(self):
-        pass
+        self.state = True
+        return True
 
     def close_valve(self):
-        pass
+        self.state = False
+        return False
 
 
 
