@@ -3,7 +3,6 @@ from src.hydraulics import Hydraulic, Orifice, Volume
 import pytest
 from pytest import mark
 
-from src.simulator import mass_flow_rate
 
 @mark.orifice
 class TestOrifice:
