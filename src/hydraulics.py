@@ -42,7 +42,10 @@ class Volume(Hydraulic):
     
 
     def get_pressure(self, delta_t:float, mass_flow_rates:list):
-        pass
+        new_pressure = ((self.bulk_modulus/self.volume)*delta_t)*sum(mass_flow_rates)
+        delta_pressure = self.pressure + new_pressure
+        self.pressure = delta_pressure
+        return delta_pressure
     
     
     
