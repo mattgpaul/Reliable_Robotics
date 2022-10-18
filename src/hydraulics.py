@@ -2,6 +2,7 @@
 
 # Imports
 from dataclasses import dataclass
+from typing import List
 
 
 # Parent Hydraulic System
@@ -38,7 +39,7 @@ class Volume(Hydraulic):
     pressure: float
     volume: float
 
-    def get_pressure(self, delta_t: float, mass_flow_rates: list[float]):
+    def get_pressure(self, delta_t: float, mass_flow_rates: List[float]):
         new_pressure = ((self.bulk_modulus/self.volume)*delta_t)*sum(mass_flow_rates)
         delta_pressure = self.pressure + new_pressure
         self.pressure = delta_pressure
