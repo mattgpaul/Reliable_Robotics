@@ -1,7 +1,8 @@
 #%% Imports
-from hydraulics import Orifice, Volume
+from src.hydraulics import Orifice, Volume
 from cmath import inf
 import time
+from typing import Dict, Any
 
 #%% Setup
 
@@ -84,7 +85,7 @@ def get_system_status(timestamp: float, delta_t: float):
     print(f"{timestamp:.2f}: accumulator {accumulator.pressure:.2f} cylinder {cylinder.pressure:.2f}")
 
 
-def get_event(event: dict, timestamp: float):
+def get_event(event: Dict[Any, Any], timestamp: float):
     if timestamp in event['TIME']:
         index = event['TIME'].index(timestamp)
         event['CMD'][index]()

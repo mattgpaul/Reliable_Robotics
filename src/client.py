@@ -10,11 +10,7 @@ class DataClient:
     FORMAT: str = 'utf-8'
     DISCONNECT_MESSAGE: str = "!DISCONNECT"
     SERVER: str = "127.0.1.1"
-    CLIENT = None
-    
-    if CLIENT is None:
-        CLIENT = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        
+    CLIENT = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     CLIENT.connect((SERVER, PORT))
 
     def send(self, msg):
