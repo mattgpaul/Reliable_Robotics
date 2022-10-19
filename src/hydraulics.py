@@ -26,10 +26,12 @@ class Orifice(Hydraulic):
 
     def open_valve(self):
         self.state = True
+        self.conductance = 1.0
         return True
 
     def close_valve(self):
         self.state = False
+        self.conductance = 0.0
         return False
 
 
