@@ -1,4 +1,4 @@
-""" Namespace creation for the hydraulic system """
+"""Namespace creation for the hydraulic system """
 
 # Imports
 from dataclasses import dataclass
